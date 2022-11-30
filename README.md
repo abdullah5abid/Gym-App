@@ -33,5 +33,5 @@ Open terminal to run the project
   python3 manage.py runserver
 ```
 
-open web browser and search : http://127.0.0.1:8000/
+Open web browser and search : http://127.0.0.1:8000/
 
