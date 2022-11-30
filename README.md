@@ -22,7 +22,7 @@ In Linux
   python3 -m venv env
 ```
 
-Activate virtual Environment Either you can use conda env or python env
+Activate virtual Environment either you can use conda env or python env
 
 Open terminal to run the project
 
