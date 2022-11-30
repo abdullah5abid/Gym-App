@@ -35,3 +35,5 @@ Open terminal to run the project
 
 Open web browser and search : http://127.0.0.1:8000/
 
+## 🔗 Contibutor
+[![Github](https://img.shields.io/badge/Abid_khan-000?style=for-the-badge&logo=ko-fi)](https://github.com/abidkhan03)
