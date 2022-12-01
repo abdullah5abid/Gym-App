@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Session Exercise</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'users_list' %}"></a>{{users.username}}</li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'signout' %}">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-2">
+        <div class="row mb-2">
+          <div class="col-lg-4 mx-auto text-center">
+            <h1 class="display-4" style="color: white;">Gym App System</h1>
+            <h1 class="display-4">Gym App System</h1>
+          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="session-Records" class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">User Name</th>
+                            <th scope="col">Joined Date</th>
+                            <th scope="col">Last login</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        {% if user.is_authenticated %}
+                        <tr>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.date_joined}}</td>
+                            <td>{{user.last_login|default:"--"}}</td>
+                            {% if user.is_active %}
+                            <td>Acitve</td>
+                            {% else %}
+                            <td>Not Active</td>
+                            {% endif %}
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                    Add Session
+                </button>
+                <a type="button" class="btn btn-primary btn-sm" href="#"><b>View Users</b>
+                    
+                </a> -->
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
