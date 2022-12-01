@@ -28,9 +28,9 @@ Open terminal to run the project
 
 ```bash
 
-  python3 manage.py makemigrations
-  python3 manage.py migrate
-  python3 manage.py runserver
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py runserver
 ```
 
 Open web browser and search : http://127.0.0.1:8000/
